@@ -4,7 +4,7 @@
 **Description** : I was given a task to spin up 2 containers ,flask and sql and connect to the database container using the flask container.
 
 ### Step 1: 
- **First I created a folder to store my project and initialized it using git init.**
+**First I created a folder to store my project and initialized it using git init.**
 
  ```bash
  mkdir flask-app
@@ -13,18 +13,20 @@
  ```
 
 ### Step 2
- **Now I started by creating the app.py file and added basic flask program into it to display hello world. Now I wrote a Dockerfile to create an image and run a container with all the dependencies and port mapping .**
+ **Now I started by creating the app.py file and added basic flask program into it to display hello world. Now I wrote a Dockerfile to create an image and run a container with all the dependencies and port mapping.**
  ```bash
- touch app.py        ##wrote the code for a hello world msg from flask docs
- touch Dockerfile    ##wrote a docker file to run this app in a container
- touch requirements.txt  ##put alll the requirements in this file (Flask)
-                         ##after writing all the files built an image and ran it as a container 
+ touch app.py  #wrote the code for a hello world msg from flask docs
+ touch Dockerfile #wrote a docker file to run this app in a container
+ touch requirements.txt #put alll the requirements in this file (Flask)
+                        #after writing all the files built an image and ran it as a container 
  docker build flaskapp:latest .
- docker run -p 3000:3000 flaskapp:latest        ##Checked the address 127.0.0.1:3000 to see hello world app.
+ docker run -p 3000:3000 flaskapp:latest
+                                        #Checked the address 127.0.0.1:3000 to see hello world app.
  ```
 
  ### Step 3 
  **I added code in the app.py file to make connections to a database.**
+***NOTE : WHILE CONNECTING TO THE DATABASE WE HAVE TO USE THE HOST NAME OF THE DATABASE AS THE NAME OF THE SERVICE OF THE DATABASE IN THE DOCKER-COMPOSE.YML FILE***
 
  And created a docker-compose.yml file to spin up multiple containers.
 
@@ -32,8 +34,8 @@
 
  ```bash
  touch docker-compose.yml 
-  ##added all the content of databse into the databse container using the postgres database.
-  ##built the previously written docker file into a container running the flask app
+ #added all the content of databse into the databse container using the postgres database.
+ #built the previously written docker file into a container running the flask app
  ```
 
  *** Challenges: In the build section under flask-app container of the yml file I just added a . signifying that I had to build using the current docker file.
