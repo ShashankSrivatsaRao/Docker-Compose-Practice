@@ -51,7 +51,7 @@ touch docker-compose.yml
  **Executed all containers simultaneously with Docker Compose.**
 
  ```bash
- docker compose uild
+ docker compose build
  docker compose up
  ```
 
